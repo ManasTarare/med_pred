@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 
 # ----- Data Loading and Preprocessing -----
-dataset = pd.read_csv('med/Training.csv')
+dataset = pd.read_csv('Training.csv')
 
 x = dataset.drop("prognosis", axis=1)
 y = dataset["prognosis"]
@@ -49,11 +49,11 @@ scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 # ----- Helper Function -----
 def helper(disease):
-    description = pd.read_csv("med/description.csv")
-    precautions = pd.read_csv("med/precautions_df.csv")
-    medications = pd.read_csv('med/medications.csv')
-    diets = pd.read_csv("med/diets.csv")
-    workouts = pd.read_csv("med/workout_df.csv")
+    description = pd.read_csv("description.csv")
+    precautions = pd.read_csv("precautions_df.csv")
+    medications = pd.read_csv('medications.csv')
+    diets = pd.read_csv("diets.csv")
+    workouts = pd.read_csv("workout_df.csv")
 
     desc_data = description.loc[description['Disease'] == disease, 'Description'].values
     desc = desc_data[0] if len(desc_data) > 0 else "No description available."
