@@ -89,7 +89,7 @@ st.sidebar.title("Navigation")
 sidebar_option = st.sidebar.radio("Choose a section:", ["Home", "Predict", "About"])
 
 # Display image only in the sidebar
-image_path = Path("med/med_pred_img.png")  # Make sure the path is correct
+image_path = Path("med_pred_img.png")  # Make sure the path is correct
 st.sidebar.image(str(image_path), use_container_width=True)
 
 # Main Content
